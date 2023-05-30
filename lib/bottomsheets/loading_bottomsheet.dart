@@ -12,7 +12,7 @@ class LoadingBottomSheet{
 
   BuildContext? context = Navigation.instance.navigatorKey.currentContext;
 
-  Future<void> showBottomSheet({required String desc}) async{
+  Future<void> showBottomSheet() async{
     if(context != null){
       await showModalBottomSheet(
         context: context!,
