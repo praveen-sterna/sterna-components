@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../utills/constants.dart';
+import '../utills/sterna_constants.dart';
 
 class Loader extends StatelessWidget {
   final Color? color;
@@ -12,7 +12,7 @@ class Loader extends StatelessWidget {
         height: 30,
         width: 30,
         child: CircularProgressIndicator(
-          color: color ?? Constants.primary,
+          color: color ?? SternaConstants.primary,
           strokeWidth: 3,
         ),
       ),

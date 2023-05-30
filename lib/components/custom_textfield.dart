@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../utills/constants.dart';
+import '../utills/sterna_constants.dart';
 
 class CustomTextField extends StatefulWidget {
   final String hintText;
@@ -62,35 +62,27 @@ class _CustomTextFieldState extends State<CustomTextField> {
       },
       decoration: InputDecoration(
           hintText: widget.hintText,
-          hintStyle: TextStyle(
-              fontSize: 14,
-              letterSpacing: 0.5,
-              fontWeight: FontWeight.w300,
-              color: Colors.grey.shade500),
+          hintStyle: TextStyle(fontSize: 14, letterSpacing: 0.5, fontWeight: FontWeight.w300, color: Colors.grey.shade500),
           counterText: "",
-          suffixIcon: (focusNode.hasFocus && showClear)
-              ? IconButton(
+          suffixIcon: (focusNode.hasFocus && showClear) ? IconButton(
                   onPressed: () {
                     widget.controller?.clear();
                     showClear = false;
                     setState(() {});
                   },
-                  icon: Icon(
-                    Icons.cancel,
-                    color: Constants.primary,
-                    size: 20,
-                  ))
-              : null,
+                  icon: Icon(Icons.cancel, color: SternaConstants.primary, size: 20,)
+          ) : null,
           filled: true,
           fillColor: Colors.grey.shade200,
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
-              borderSide: BorderSide(color: Colors.grey.shade100)),
+              borderSide: BorderSide(color: Colors.grey.shade100)
+          ),
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
-              borderSide: BorderSide(color: Colors.grey.shade100)),
-          contentPadding:
-              const EdgeInsets.symmetric(horizontal: 16, vertical: 20)),
+              borderSide: BorderSide(color: Colors.grey.shade100)
+          ),
+          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20)),
     );
   }
 }

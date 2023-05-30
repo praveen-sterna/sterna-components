@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../utills/constants.dart';
+import '../utills/sterna_constants.dart';
 
 enum ButtonType {
   filled,
@@ -32,7 +32,7 @@ class Button extends StatelessWidget {
       elevation: 0,
       padding: const EdgeInsets.symmetric(horizontal: 24),
       disabledColor: Colors.grey.shade300,
-      color: color ?? Constants.primary,
+      color: color ?? SternaConstants.primary,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
       child: Text(text, style: TextStyle(color: textColor ?? Colors.white, fontWeight: FontWeight.w600, fontSize: 15),),
     ) : MaterialButton(
@@ -44,9 +44,9 @@ class Button extends StatelessWidget {
       color: null,
       shape:RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
-          side: BorderSide(color: color ?? Constants.primary,)
+          side: BorderSide(color: color ?? SternaConstants.primary,)
       ),
-      child: Text(text, style: TextStyle(color: color ?? Constants.primary, fontWeight: FontWeight.w600, fontSize: 15),),
+      child: Text(text, style: TextStyle(color: color ?? SternaConstants.primary, fontWeight: FontWeight.w600, fontSize: 15),),
     );
   }
 }

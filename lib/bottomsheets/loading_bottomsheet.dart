@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import '../components/button.dart';
 import '../navigation/navigation.dart';
-import '../utills/constants.dart';
+import '../utills/sterna_constants.dart';
 
 
 class LoadingBottomSheet{
@@ -40,7 +40,7 @@ class LoadingBottomSheet{
                     height: 25,
                     width: 25,
                     child: CircularProgressIndicator(
-                      color: Constants.primary,
+                      color: SternaConstants.primary,
                       strokeWidth: 2.5,
                       backgroundColor: Colors.grey.shade100,
                     ),
