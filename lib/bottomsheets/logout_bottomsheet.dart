@@ -22,6 +22,7 @@ class LogoutBottomSheet{
               color: Colors.white,
               borderRadius: BorderRadius.circular(16)
             ),
+            width: double.infinity,
             padding: const EdgeInsets.all(16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
