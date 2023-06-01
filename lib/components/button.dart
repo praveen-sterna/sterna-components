@@ -13,6 +13,8 @@ class Button extends StatelessWidget {
   final Color? textColor;
   final ButtonType type;
   final IconData? icon;
+  final double? height;
+  final bool? isFullWidth;
 
   const Button(
       {Key? key,
@@ -20,6 +22,8 @@ class Button extends StatelessWidget {
         required this.onPressed,
         this.color,
         this.textColor,
+        this.height,
+        this.isFullWidth,
         this.type = ButtonType.filled,
         this.icon}) : super(key: key);
 
@@ -28,8 +32,9 @@ class Button extends StatelessWidget {
     bool isFilled = (type == ButtonType.filled);
     return (isFilled) ? MaterialButton(
       onPressed: onPressed,
-      height: 42,
+      height: height ?? 42,
       elevation: 0,
+      minWidth: (isFullWidth ?? false) ? double.infinity : null,
       padding: const EdgeInsets.symmetric(horizontal: 24),
       disabledColor: Colors.grey.shade300,
       color: color ?? SternaConstants.primary,
