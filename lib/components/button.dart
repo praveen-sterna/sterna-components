@@ -13,7 +13,6 @@ class Button extends StatelessWidget {
   final Color? textColor;
   final ButtonType type;
   final IconData? icon;
-  final double? height;
 
   const Button(
       {Key? key,
@@ -21,7 +20,6 @@ class Button extends StatelessWidget {
         required this.onPressed,
         this.color,
         this.textColor,
-        this.height,
         this.type = ButtonType.filled,
         this.icon}) : super(key: key);
 
@@ -30,7 +28,7 @@ class Button extends StatelessWidget {
     bool isFilled = (type == ButtonType.filled);
     return (isFilled) ? MaterialButton(
       onPressed: onPressed,
-      height: height ?? 42,
+      height: SternaConstants.buttonHeight ?? 42,
       elevation: 0,
       minWidth: SternaConstants.buttonWidth,
       padding: const EdgeInsets.symmetric(horizontal: 24),
