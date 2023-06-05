@@ -16,6 +16,7 @@ class SessionExpiredBottomSheet{
       await showModalBottomSheet(
         context: context!,
         isDismissible: false,
+        enableDrag: false,
         backgroundColor: Colors.white,
         builder: (BuildContext context) {
           return WillPopScope(
