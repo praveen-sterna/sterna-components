@@ -8,12 +8,4 @@ class SternaConstants{
   static void setPrimaryColor(Color color){
     primary = color;
   }
-
-  static void setButtonWidth(double? value){
-    buttonWidth = value;
-  }
-
-  static void setButtonHeight(double? value){
-    buttonHeight = value;
-  }
 }

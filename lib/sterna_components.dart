@@ -14,6 +14,8 @@ export 'components/custom_textfield.dart';
 export 'components/error_text.dart';
 export 'components/loader.dart';
 export 'components/no_data.dart';
+export 'components/label.dart';
+export 'components/custom_appbar.dart';
 
 //navigation
 export 'navigation/fade_transition_builder.dart';
