@@ -53,6 +53,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         } else {
           showClear = true;
         }
+        if(widget.onChanged != null)widget.onChanged!(val);
         setState(() {});
       },
       onTap: () {
