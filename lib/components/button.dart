@@ -41,7 +41,7 @@ class Button extends StatelessWidget {
       disabledColor: Colors.grey.shade300,
       color: color ?? SternaConstants.primary,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular((isRounded) ? 30 : 8)),
-      child: Text(text, style: TextStyle(color: textColor ?? Colors.white, fontWeight: FontWeight.w600, fontSize: 15),),
+      child: Text(text.toUpperCase(), style: TextStyle(color: textColor ?? Colors.white, fontWeight: FontWeight.w600, fontSize: 15),),
     ) : MaterialButton(
       onPressed: onPressed,
       height: 42,
@@ -53,7 +53,7 @@ class Button extends StatelessWidget {
           borderRadius: BorderRadius.circular((isRounded) ? 30 : 8),
           side: BorderSide(color: color ?? SternaConstants.primary,)
       ),
-      child: Text(text, style: TextStyle(color: color ?? SternaConstants.primary, fontWeight: FontWeight.w600, fontSize: 15),),
+      child: Text(text.toUpperCase(), style: TextStyle(color: color ?? SternaConstants.primary, fontWeight: FontWeight.w600, fontSize: 15),),
     );
   }
 }
