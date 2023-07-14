@@ -24,7 +24,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSize{
         icon: Icon(leadingIcon ?? Icons.keyboard_backspace_rounded, color: titleColor ?? Colors.white,),
       ) : null,
       actions: actions,
-      title: Text(title,style: TextStyle(color: titleColor ?? Colors.white, fontSize: 17, fontWeight: FontWeight.w600),),
+      title: Text(title,style: TextStyle(color: titleColor ?? Colors.white, fontSize: 20, fontWeight: FontWeight.w600),),
       centerTitle: centerTitle ?? false,
     );
   }
