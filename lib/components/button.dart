@@ -51,9 +51,9 @@ class Button extends StatelessWidget {
       color: null,
       shape:RoundedRectangleBorder(
           borderRadius: BorderRadius.circular((isRounded) ? 30 : 8),
-          side: BorderSide(color: color ?? SternaConstants.primary,)
+          side: BorderSide(color: color ?? SternaConstants.buttonColor,)
       ),
-      child: Text(text.toUpperCase(), style: TextStyle(color: color ?? SternaConstants.primary, fontWeight: FontWeight.w600, fontSize: 15),),
+      child: Text(text.toUpperCase(), style: TextStyle(color: color ?? SternaConstants.buttonColor, fontWeight: FontWeight.w600, fontSize: 15),),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sterna_components/sterna_components.dart';
 
 import 'button.dart';
 
@@ -22,7 +23,7 @@ class ErrorText extends StatelessWidget {
           const SizedBox(height: 16,),
           Text(
             error,
-            style: const TextStyle(fontSize: 14, height: 1.8, color: Colors.blueGrey,fontWeight: FontWeight.w300),
+            style: TextStyle(fontSize: 14, height: 1.8, color: SternaConstants.secondaryTextColor,fontWeight: FontWeight.w300),
             textAlign: TextAlign.center,
             maxLines: 5,
           ),

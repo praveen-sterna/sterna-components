@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../components/button.dart';
 import '../navigation/navigation.dart';
+import '../utills/sterna_constants.dart';
 
 
 class LogoutBottomSheet{
@@ -31,18 +32,18 @@ class LogoutBottomSheet{
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text("Logout", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600,)),
+                    Text("Logout", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: SternaConstants.primaryTextColor)),
                     IconButton(
-                      icon: const Icon(Icons.close, color: Colors.black,),
+                      icon: Icon(Icons.close, color: SternaConstants.primaryTextColor,),
                       onPressed: () {
                         Navigation.instance.goBack();
                       },
                     ),
                   ],
                 ),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.only(top: 20.0),
-                  child: Text("Are you sure, Do you really want to logout?", style: TextStyle(fontSize: 15, color: Colors.blueGrey, fontWeight: FontWeight.w300, height: 1.8),),
+                  child: Text("Are you sure, Do you really want to logout?", style: TextStyle(fontSize: 15, color: SternaConstants.secondaryTextColor, fontWeight: FontWeight.w300, height: 1.8),),
                 ),
                 const SizedBox(height: 36),
                 Row(

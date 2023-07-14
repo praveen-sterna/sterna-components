@@ -6,25 +6,23 @@ class CustomAppBar extends StatelessWidget implements PreferredSize{
   final bool? centerTitle;
   final bool? isLeading;
   final IconData? leadingIcon;
-  final Color? bgColor;
   final List<Widget>? actions;
-  final Color? titleColor;
-  const CustomAppBar({Key? key, required this.title, this.centerTitle, this.isLeading, this.leadingIcon, this.bgColor, this.actions, this.titleColor}) : super(key: key);
+  const CustomAppBar({Key? key, required this.title, this.centerTitle, this.isLeading, this.leadingIcon, this.actions}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       toolbarHeight: 50,
-      backgroundColor: bgColor ?? SternaConstants.primary,
+      backgroundColor: SternaConstants.appBarColor,
       automaticallyImplyLeading: false,
       leading: (isLeading ?? true) ? IconButton(
         onPressed: (){
           Navigation.instance.goBack();
         },
-        icon: Icon(leadingIcon ?? Icons.keyboard_backspace_rounded, color: titleColor ?? Colors.white,),
+        icon: Icon(leadingIcon ?? Icons.keyboard_backspace_rounded, color: SternaConstants.appBarIconColor,),
       ) : null,
       actions: actions,
-      title: Text(title,style: TextStyle(color: titleColor ?? Colors.white, fontSize: 20, fontWeight: FontWeight.w600),),
+      title: Text(title,style: TextStyle(color: SternaConstants.appBarIconColor, fontSize: 20, fontWeight: FontWeight.w600),),
       centerTitle: centerTitle ?? false,
     );
   }

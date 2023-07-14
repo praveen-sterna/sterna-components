@@ -36,7 +36,7 @@ class LoadingBottomSheet{
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const SizedBox(height: 16,),
-                  const Text("Loading", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600,)),
+                  Text("Loading", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: SternaConstants.primaryTextColor)),
                   const SizedBox(height: 30,),
                   SizedBox(
                     height: 25,
@@ -48,10 +48,10 @@ class LoadingBottomSheet{
                     ),
                   ),
                   const SizedBox(height: 24),
-                  const Text(
+                  Text(
                     "We are processing your request,\nPlease wait",
                     textAlign: TextAlign.center,
-                    style: TextStyle(height: 1.8, fontSize: 14, color: Colors.blueGrey, fontWeight: FontWeight.w300),
+                    style: TextStyle(height: 1.8, fontSize: 14, color: SternaConstants.secondaryTextColor, fontWeight: FontWeight.w300),
                   ),
                   const SizedBox(height: 16,),
                 ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sterna_components/sterna_components.dart';
 
 class Label extends StatelessWidget {
   final String text;
@@ -9,7 +10,7 @@ class Label extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(text,style: const TextStyle(color: Colors.black,fontWeight: FontWeight.w500, fontSize: 15),),
+        Text(text,style: TextStyle(color: SternaConstants.primaryTextColor,fontWeight: FontWeight.w500, fontSize: 16),),
         const SizedBox(width: 4,),
         Visibility(
             visible: isRequired,

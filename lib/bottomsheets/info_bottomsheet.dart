@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import '../components/button.dart';
 import '../navigation/navigation.dart';
+import '../utills/sterna_constants.dart';
 
 
 class InfoBottomSheet{
@@ -32,9 +33,9 @@ class InfoBottomSheet{
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text("Info", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600,)),
+                    Text("Info", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: SternaConstants.primaryTextColor)),
                     IconButton(
-                      icon: const Icon(Icons.close, color: Colors.black,),
+                      icon: Icon(Icons.close, color: SternaConstants.primaryTextColor),
                       onPressed: () {
                         Navigation.instance.goBack();
                       },
@@ -47,7 +48,7 @@ class InfoBottomSheet{
                   height: 150,
                 ),
                 const SizedBox(height: 16),
-                Text(info, style: const TextStyle(fontSize: 15, color: Colors.blueGrey, fontWeight: FontWeight.w300, height: 1.8),textAlign: TextAlign.center,),
+                Text(info, style: TextStyle(fontSize: 15, color: SternaConstants.secondaryTextColor, fontWeight: FontWeight.w300, height: 1.8),textAlign: TextAlign.center,),
               ],
             ),
           );

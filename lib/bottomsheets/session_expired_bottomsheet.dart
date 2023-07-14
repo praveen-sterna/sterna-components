@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import '../components/button.dart';
 import '../navigation/navigation.dart';
+import '../utills/sterna_constants.dart';
 
 
 class SessionExpiredBottomSheet{
@@ -34,10 +35,10 @@ class SessionExpiredBottomSheet{
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Session Expired", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600,)),
+                      Text("Session Expired", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: SternaConstants.primaryTextColor)),
                     ],
                   ),
                   Lottie.asset(
@@ -46,7 +47,7 @@ class SessionExpiredBottomSheet{
                     height: 150,
                   ),
                   const SizedBox(height: 16),
-                  const Text("Current session expired. Logout and start new session", style: TextStyle(fontSize: 15, color: Colors.blueGrey, fontWeight: FontWeight.w300, height: 1.8),textAlign: TextAlign.center,),
+                  Text("Current session expired. Logout and start new session", style: TextStyle(fontSize: 15, color: SternaConstants.secondaryTextColor, fontWeight: FontWeight.w300, height: 1.8),textAlign: TextAlign.center,),
                   const SizedBox(height: 24),
                   Button(
                     onPressed: () {
