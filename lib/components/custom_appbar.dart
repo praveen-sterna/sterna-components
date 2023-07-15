@@ -14,6 +14,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSize{
     return AppBar(
       toolbarHeight: 50,
       backgroundColor: SternaConstants.appBarColor,
+      elevation: 0,
       automaticallyImplyLeading: false,
       leading: (isLeading ?? true) ? IconButton(
         onPressed: (){

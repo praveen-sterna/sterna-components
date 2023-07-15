@@ -39,7 +39,7 @@ class CustomTextField extends StatelessWidget {
       onChanged: onChanged,
       decoration: InputDecoration(
           hintText: hintText,
-          hintStyle: TextStyle(fontSize: 14, letterSpacing: 0.5, fontWeight: FontWeight.w300, color: Colors.grey.shade500),
+          hintStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w300, color: Colors.grey.shade500),
           counterText: "",
           filled: true,
           fillColor: SternaConstants.textFieldColor,
