@@ -50,6 +50,7 @@ class LogoutBottomSheet{
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Button(
+                      width: 50,
                       color: Colors.blueGrey.shade50,
                       onPressed: () {
                         Navigation.instance.goBack();
@@ -59,6 +60,7 @@ class LogoutBottomSheet{
                     ),
                     const SizedBox(width: 8),
                     Button(
+                      width: 50,
                       onPressed: () {
                         Navigation.instance.goBack();
                         onLogout();
