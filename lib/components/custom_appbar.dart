@@ -8,12 +8,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSize{
   final bool? isLeading;
   final IconData? leadingIcon;
   final List<Widget>? actions;
-  const CustomAppBar({Key? key, required this.title, this.centerTitle, this.isLeading, this.leadingIcon, this.actions}) : super(key: key);
+  final Color? bg;
+  const CustomAppBar({Key? key, required this.title, this.centerTitle, this.isLeading, this.leadingIcon, this.actions, this.bg}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: SternaConstants.appBarColor,
+      backgroundColor: bg ?? SternaConstants.appBarColor,
       elevation: 0,
       automaticallyImplyLeading: false,
       leading: (isLeading ?? true) ? IconButton(
