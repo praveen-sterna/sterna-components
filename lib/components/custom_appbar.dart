@@ -9,7 +9,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSize{
   final IconData? leadingIcon;
   final List<Widget>? actions;
   final Color? bg;
-  const CustomAppBar({Key? key, required this.title, this.centerTitle, this.isLeading, this.leadingIcon, this.actions, this.bg}) : super(key: key);
+  final Color? leadingIconColor;
+  const CustomAppBar({Key? key, required this.title, this.centerTitle, this.isLeading, this.leadingIcon, this.actions, this.bg, this.leadingIconColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSize{
         onPressed: (){
           Navigation.instance.goBack();
         },
-        icon: Icon(leadingIcon ?? Icons.keyboard_backspace_rounded, color: SternaConstants.appBarIconColor,),
+        icon: Icon(leadingIcon ?? Icons.keyboard_backspace_rounded, color: leadingIconColor ?? SternaConstants.appBarIconColor,),
       ) : null,
       actions: actions,
       title: Text(title,style: TextStyle(color: SternaConstants.appBarIconColor, fontSize: 20, fontWeight: FontWeight.w600),),
