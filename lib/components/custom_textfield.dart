@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../utills/sterna_constants.dart';
 
-class CustomTextField extends StatelessWidget {
+class CustomTextField extends StatefulWidget {
   final String hintText;
   final TextEditingController? controller;
   final Function(String?)? onChanged;
@@ -11,47 +11,77 @@ class CustomTextField extends StatelessWidget {
   final int? maxLength;
   final bool? isReadOnly;
   final bool? isAutoFocus;
+  final Function()? onTap;
 
   const CustomTextField(
       {Key? key,
-      required this.hintText,
-      this.isAutoFocus,
-      this.controller,
-      this.formatters,
-      this.onChanged,
-      this.keyboardType,
-      this.maxLength,
-      this.isReadOnly})
+        required this.hintText,
+        this.isAutoFocus,
+        this.controller,
+        this.formatters,
+        this.onChanged,
+        this.keyboardType,
+        this.maxLength,
+        this.onTap,
+        this.isReadOnly})
       : super(key: key);
+
+  @override
+  State<CustomTextField> createState() => _CustomTextFieldState();
+}
+
+class _CustomTextFieldState extends State<CustomTextField> {
+  final FocusNode _focusNode = FocusNode();
+  bool hasFocus = false;
+
+  @override
+  void initState() {
+    _focusNode.addListener(() {
+      setState(() {
+        hasFocus = _focusNode.hasFocus;
+      });
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _focusNode.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-      autofocus: isAutoFocus ?? false,
-      controller: controller,
-      keyboardType: keyboardType,
-      inputFormatters: formatters,
-      style: (keyboardType == TextInputType.number)
+      focusNode: _focusNode,
+      autofocus: widget.isAutoFocus ?? false,
+      controller: widget.controller,
+      keyboardType: widget.keyboardType,
+      inputFormatters: widget.formatters,
+      onTap: widget.onTap,
+      style: (widget.keyboardType == TextInputType.number)
           ? const TextStyle(fontSize: 18, letterSpacing: 1.6, fontWeight: FontWeight.w500, height: 1)
-          : const TextStyle(fontSize: 16, letterSpacing: 0, fontWeight: FontWeight.w500, height: 1),
-      maxLength: maxLength,
-      readOnly: isReadOnly ?? false,
-      onChanged: onChanged,
+          : const TextStyle(fontSize: 18, letterSpacing: 0, fontWeight: FontWeight.w500, height: 1.5),
+      maxLength: widget.maxLength,
+      readOnly: widget.isReadOnly ?? false,
+      onChanged: widget.onChanged,
       decoration: InputDecoration(
-          hintText: hintText,
-          hintStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w300, color: Colors.grey.shade500),
-          counterText: "",
+          labelText: widget.hintText,
           filled: true,
-          fillColor: SternaConstants.textFieldColor,
-          enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8),
-              borderSide: BorderSide(color: SternaConstants.textFieldColor)
+          fillColor: hasFocus ? SternaConstants.primary50 : Colors.grey.shade50,
+          isDense: true,
+          floatingLabelStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color:  hasFocus ? SternaConstants.primary : SternaConstants.secondaryTextColor),
+          labelStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w300, color: Colors.grey.shade500),
+          counterText: "",
+          enabledBorder: UnderlineInputBorder(
+            borderRadius: BorderRadius.circular(8),
+            borderSide: BorderSide(color: hasFocus ? SternaConstants.primary100 : Colors.grey.shade100, width: 2),
           ),
-          focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8),
-              borderSide: BorderSide(color: SternaConstants.textFieldColor)
-          ),
-          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20)),
+          focusedBorder: UnderlineInputBorder(
+            borderRadius: BorderRadius.circular(8),
+            borderSide: BorderSide(color: hasFocus ? SternaConstants.primary100 : Colors.grey.shade100, width: 2),
+          )
+      ),
     );
   }
 }
