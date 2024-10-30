@@ -20,10 +20,8 @@ class SessionExpiredBottomSheet{
         enableDrag: false,
         backgroundColor: Colors.white,
         builder: (BuildContext context) {
-          return WillPopScope(
-            onWillPop: () async{
-              return false;
-            },
+          return PopScope(
+            canPop: false,
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.white,

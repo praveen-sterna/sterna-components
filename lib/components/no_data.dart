@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sterna_components/sterna_components.dart';
 
-import 'button.dart';
-
 class NoData extends StatelessWidget {
   final String text;
   final Function() onRetry;

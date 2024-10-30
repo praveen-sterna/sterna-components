@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:sterna_components/sterna_components.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSize{

@@ -42,7 +42,7 @@ class LogoutBottomSheet{
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 20.0),
+                  padding: const EdgeInsets.only(top: 20.0),
                   child: Text("Are you sure, Do you really want to logout?", style: TextStyle(fontSize: 15, color: SternaConstants.secondaryTextColor, fontWeight: FontWeight.w300, height: 1.8),),
                 ),
                 const SizedBox(height: 36),

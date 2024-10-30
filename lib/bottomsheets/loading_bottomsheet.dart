@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
-import '../components/button.dart';
 import '../navigation/navigation.dart';
 import '../utills/sterna_constants.dart';
 
@@ -20,10 +18,8 @@ class LoadingBottomSheet{
         enableDrag: false,
         backgroundColor: Colors.white,
         builder: (BuildContext context) {
-          return WillPopScope(
-            onWillPop: () async{
-              return false;
-            },
+          return PopScope(
+            canPop: false,
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.white,

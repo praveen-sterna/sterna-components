@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sterna_components/sterna_components.dart';
 
-import 'button.dart';
-
 class ErrorText extends StatelessWidget {
   final String? title;
   final String error;

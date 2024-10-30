@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import '../components/button.dart';
 import '../navigation/navigation.dart';
 import '../utills/sterna_constants.dart';
 
